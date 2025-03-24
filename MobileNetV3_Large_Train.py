@@ -18,7 +18,7 @@ def create_model(num_classes=2, device='cuda'):
     mobilenet_v3_large = models.mobilenet_v3_large(weights=models.MobileNet_V3_Large_Weights.IMAGENET1K_V1)
 
     for param in mobilenet_v3_large.parameters():
-        param.requires_grad = True  # Tüm parametrelerin eğitilmesine izin ver
+        param.requires_grad = True
 
     # Global average pooling
     mobilenet_v3_large.avgpool = nn.AdaptiveAvgPool2d(1)
